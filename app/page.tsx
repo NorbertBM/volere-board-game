@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import D10DiceRoller from "./components/D10DiceRoller";
+import Image from "next/image";
+
 export default function Home() {
   const [result, setResult] = useState<number | null>(null);
   return (
@@ -27,6 +29,85 @@ export default function Home() {
           >
             Enter the Facility
           </a>
+        </div>
+      </section>
+      {/* Media Gallery */}
+      <section className="py-24 px-6 border-t border-neutral-800 bg-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-semibold mb-3">Game Assets</h2>
+            <small className="text-neutral-600">
+              ( NOT final Art. Work in progress! )
+            </small>
+            <p className="text-neutral-400">
+              Cards, panels, and map layouts from the Volere prototype.
+            </p>
+          </div>
+
+          {(() => {
+            const items = [
+              {
+                src: "/images/mutant-guard.png",
+                title: "Miles – Guard (Card)",
+              },
+              {
+                src: "/images/mutant-labworker.png",
+                title: "Laborantis – Labworker (Card)",
+              },
+              { src: "/images/mutant-rat.png", title: "Rattus – Rat (Card)" },
+              { src: "/images/mutant-dog.png", title: "Canis – Dog (Card)" },
+              {
+                src: "/images/security-check-area.png",
+                title: "Security Check (Map)",
+              },
+              { src: "/images/main-area.png", title: "Main Area (Map)" },
+              {
+                src: "/images/main-entrance-area.png",
+                title: "Main Entrance (Map)",
+              },
+              {
+                src: "/images/character-anna.png",
+                title: "Anna Smith (Character Panel)",
+              },
+              {
+                src: "/images/character-caretaker.png",
+                title: "Caretaker (Character Panel)",
+              },
+            ];
+
+            return (
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((item) => (
+                  <a
+                    key={item.src}
+                    href={item.src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group rounded-2xl border border-neutral-800 bg-neutral-900 overflow-hidden hover:border-neutral-700 transition"
+                  >
+                    <div className="relative aspect-[4/5] bg-neutral-950">
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-contain p-4 group-hover:scale-[1.02] transition"
+                      />
+                    </div>
+
+                    <div className="px-4 py-3 border-t border-neutral-800">
+                      <div className="text-sm font-semibold text-neutral-200">
+                        {item.title}
+                      </div>
+                      <div className="text-xs text-neutral-500 mt-1">
+                        Click to open
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            );
+          })()}
         </div>
       </section>
 
