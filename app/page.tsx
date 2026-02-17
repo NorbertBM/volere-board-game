@@ -31,6 +31,55 @@ export default function Home() {
           </a>
         </div>
       </section>
+      {/* YouTube Videos (No API: auto-updating uploads playlist) */}
+      <section
+        id="videos"
+        className="py-24 px-6 border-t border-neutral-800 bg-neutral-950"
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-semibold mb-3">Dev Videos</h2>
+            <p className="text-neutral-400">
+              Watch the latest Volere updates, prototypes, and
+              behind-the-scenes.
+            </p>
+
+            <div className="mt-4">
+              <a
+                href="https://www.youtube.com/channel/UC4OGwb9D7th3Dj7-0do7HeA"
+                target="_blank"
+                rel="noreferrer"
+                className="text-teal-400 font-semibold hover:text-teal-300 transition"
+              >
+                Visit the channel →
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-neutral-800 bg-neutral-900 overflow-hidden">
+            <div className="relative w-full aspect-video">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube-nocookie.com/embed/videoseries?list=UU4OGwb9D7th3Dj7-0do7HeA"
+                title="Volere – Latest Uploads"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="p-4 border-t border-neutral-800">
+              <div className="text-sm font-semibold text-neutral-200">
+                Latest uploads (auto-updating)
+              </div>
+              <div className="text-xs text-neutral-500 mt-1">
+                This playlist updates automatically whenever you upload a new
+                video.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Media Gallery */}
       <section className="py-24 px-6 border-t border-neutral-800 bg-neutral-950">
         <div className="max-w-6xl mx-auto">
