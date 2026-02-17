@@ -86,7 +86,7 @@ export default function D10DiceRoller({
               className={
                 "inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold shadow-sm transition active:scale-[0.98] " +
                 (canRoll
-                  ? "bg-gray-900 text-white hover:bg-gray-800"
+                  ? "bg-teal-400 text-black px-6 py-3 rounded-md font-semibold hover:bg-teal-300 transition cursor-pointer"
                   : "bg-gray-200 text-gray-500 cursor-not-allowed")
               }
             >
